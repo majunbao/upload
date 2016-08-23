@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="Huploadify.css">
+  <!-- <link rel="stylesheet" href="uploadify.css"> -->
+  <script src="jquery.js"></script>
+  <script src="jquery.Huploadify.js"></script>
+  <script src="jquery.uploadify.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    var uploadConf = {
+      auto: false,
+      'formData': {
+        'res_type': '4',
+        'auth_id': '4cuo16dv04t5bd97vdnuidob03'
+      },
+      'multi': false,
+      'fileSizeLimit': '10000',
+      'buttonText': '点击上传图片文件',
+      'fileTypeDesc': '图片文件',
+      'fileTypeExts': '*.gif; *.jpg;*.jpeg; *.png;*.bmp;',
+      // 'swf'      : 'images/uploadify.swf',
+      'uploader': 'upload.php',
+      fileObjName: 'Filedata',
+      'onUploadSuccess': function(file, data, response) {
+        console.log(data);
+      }
+    };
+    $('#Hupload').Huploadify(uploadConf);
+    $('#upload').uploadify(uploadConf);
+  });
+  </script>
+</head>
+
+<body>
+  <h1>H5</h1>
+  <div id="Hupload"></div>
+  <h1>FLAsh</h1>
+  <div id="upload"></div>
+</body>
+
+</html>
